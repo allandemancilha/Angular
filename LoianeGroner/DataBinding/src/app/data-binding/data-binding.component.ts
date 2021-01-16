@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataBindingComponent implements OnInit {
 
-  constructor() { }
+  url: string;
+
+  constructor() { 
+    this.url = 'http://loiane.com'
+  }
 
   ngOnInit(): void {
   }
