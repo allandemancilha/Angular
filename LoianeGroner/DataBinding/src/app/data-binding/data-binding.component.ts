@@ -9,6 +9,10 @@ export class DataBindingComponent implements OnInit {
 
   url: string;
 
+  getValue(){
+    return 1;
+  }
+
   constructor() { 
     this.url = 'http://loiane.com'
   }
