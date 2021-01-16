@@ -6,4 +6,14 @@
         <p>1 + 0 = {{ getValue() }}</p>
         <p>Gostou do Curso de Angular? {{ courseAngular && getLikeCourse() }}</p>
     </article>
+    <article>
+        <h3>Property Binding</h3>
+        <!-- Utilizando Interpolação Para Renderizar Imagem no Template --> 
+        <img src="{{ urlImage }}">
+        <!-- Utilizando Property Binding de Forma Explícíta Para Renderizar Imagem no Template --> 
+        <!-- Formato Syntax Sugar da Utilização de Property Binding --> 
+        <img [src]="urlImage">
+        <!-- Formato Padrão da Utilização de Property Binding -->
+        <img bind-src="urlImage">
+    </article>
 </section>

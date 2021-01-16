@@ -9,6 +9,7 @@ export class DataBindingComponent implements OnInit {
 
   url: string;
   courseAngular: boolean;
+  urlImage: string;
 
   getValue(){
     return 1;
@@ -21,6 +22,7 @@ export class DataBindingComponent implements OnInit {
   constructor() { 
     this.url = 'http://loiane.com'
     this.courseAngular = true;
+    this.urlImage = 'https://i.picsum.photos/id/778/200/300.jpg?hmac=if-R94hzGN6KBh6JULJgfcPjBM5dqOSgwQqaBNTtFR4';
   }
 
   ngOnInit(): void {
