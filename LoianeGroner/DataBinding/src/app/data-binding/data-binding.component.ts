@@ -8,13 +8,19 @@ import { Component, OnInit } from '@angular/core';
 export class DataBindingComponent implements OnInit {
 
   url: string;
+  courseAngular: boolean;
 
   getValue(){
     return 1;
   }
 
+  getLikeCourse(){
+    return true;
+  }
+
   constructor() { 
     this.url = 'http://loiane.com'
+    this.courseAngular = true;
   }
 
   ngOnInit(): void {
