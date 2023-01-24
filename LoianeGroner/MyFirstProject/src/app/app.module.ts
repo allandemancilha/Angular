@@ -22,8 +22,8 @@ import { CoursesModule } from './courses/courses.module';
   ],
   // Providers: Fornece os Serviços Que Ficarão Disponíveis a Todos os Componentes
   providers: [],
-  /* 
-     Bootstrap: É Encontrado Somente no Módulo Raíz. 
+  /*
+     Bootstrap: É Encontrado Somente no Módulo Raíz.
      Declara Qual Componente Deve Subir Primeiramente no Deploy na Aplicação
   */
   bootstrap: [AppComponent]
