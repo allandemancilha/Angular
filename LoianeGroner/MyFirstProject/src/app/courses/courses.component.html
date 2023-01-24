@@ -1,16 +1,16 @@
 <p>Lista de Cursos do Portal: {{webSiteName}}</p>
 
 <ul>
-    <!-- 
+    <!--
         Utilizando Diretiva *ngFor Para Exibir os Elementos de coursesGroup Através da Variável Local course.
 
         Exemplo de Funcionamento do Código da Diretiva *ngFor:
 
-        for (let i = 0; this.coursesGroup.length; i++) {
+        for (let i = 0; i < this.coursesGroup.length; i++) {
             let course = this.coursesGroup[i];
-        } 
+        }
     -->
-        
-    <li *ngFor="let course of coursesGroup">{{course}}</li>  
+
+    <li *ngFor="let course of coursesGroup">{{course}}</li>
 </ul>
 <app-course-detail></app-course-detail>
