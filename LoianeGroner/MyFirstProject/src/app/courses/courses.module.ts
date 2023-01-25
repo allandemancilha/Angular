@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
-// Contém as Diretivas e Pipes Comuns Que São Utilizados
+// Contém as Diretivas e Pipes Mais Comuns Que São Utilizados Pelo Angular.
 import { CommonModule } from '@angular/common';
 import { CoursesComponent } from './courses.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { CoursesService } from './courses.service';
-
 
 // Decorator @NgModule Passa Para o Compilador a Informação de Que a Classe Atual é um Módulo.
 @NgModule({
