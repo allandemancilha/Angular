@@ -16,13 +16,13 @@ import { CoursesModule } from './courses/courses.module';
     MyFirstComponent,
     MySecondComponent
   ],
-  // Imports: Declarações de Outros Módulos Que Serão Utilizados no Módulo Atual ou Nos Componentes Declarados no Módulo Atual.
+  // Imports: Declarações de Outros Módulos Que Serão Utilizados no Módulo Atual ou Pelos Componentes Declarados no Módulo Atual.
   imports: [
     BrowserModule,
     AppRoutingModule,
     CoursesModule
   ],
-  // Providers: Fornece os Serviços Que Ficarão Disponíveis a Todos os Componentes Declarados no Módulo.
+  // Providers: Fornece os Serviços Que Ficarão Disponíveis Para Serem Utilizados Por Todos os Componentes Declarados no Módulo.
   providers: [],
   /*
      Bootstrap: É Encontrado Somente no Módulo Raíz.
