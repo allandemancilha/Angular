@@ -20,3 +20,32 @@
     <img bind-src="urlImage">
   </article>
 </section>
+
+<section class="class-and-style-binding">
+  <article>
+      <h3>Class e Style Binding</h3>
+      <div>
+          Selecione Uma Classe:
+
+          <!-- #selectTag: Variável Local Para Obter o Valor da Option Selecionada -->
+          <!-- (change): Declarando o Evento Change Para Capturar a Alteração do Combo Box -->
+          <select #selectTag (change)="null">
+              <option value="alert-success">Sucesso</option>
+              <option value="alert-info">Info</option>
+              <option value="alert-warning">Alerta</option>
+              <option value="alert-danger">Erro</option>
+          </select>
+          <br><br>
+          <!-- Class Binding -->
+          <div class="alert" role="alert" [class.alert-success]="selectTag.value == 'alert-success'">Sucesso</div>
+          <div class="alert" role="alert" [class.alert-info]="selectTag.value == 'alert-info'">Info</div>
+          <div class="alert" role="alert" [class.alert-warning]="selectTag.value == 'alert-warning'">Alerta</div>
+          <div class="alert" role="alert" [class.alert-danger]="selectTag.value == 'alert-danger'">Danger</div>
+
+           <!-- Como o Valor do Combo Box é o Nome da Classe CSS é Possível Utilizar o Class Binding Com Interpolação -->
+          <div class="alert {{ selectTag.value }}" role="alert">Texto Colorido Conforme Valor do Combobox.</div>
+           <!-- Style Binding -->
+          <div class="alert alert-danger" role="alert" [style.display]="selectTag.value == 'alert-danger' ? 'block' : 'none'">Texto Aperece Somente em Caso de Erro.</div>
+      </div>
+  </article>
+</section>
