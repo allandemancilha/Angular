@@ -1,19 +1,22 @@
-<section>
-    <article>
-        <h3>Interpolation / Interpolação</h3>
-        <p>String Renderizada com Interpolação: {{ url }}</p>
-        <p>1 + 1 = {{ 1 + 1 }}</p>
-        <p>1 + 0 = {{ getValue() }}</p>
-        <p>Gostou do Curso de Angular? {{ courseAngular && getLikeCourse() }}</p>
-    </article>
-    <article>
-        <h3>Property Binding</h3>
-        <!-- Utilizando Interpolação Para Renderizar Imagem no Template --> 
-        <img src="{{ urlImage }}">
-        <!-- Utilizando Property Binding de Forma Explícíta Para Renderizar Imagem no Template --> 
-        <!-- Formato Syntax Sugar da Utilização de Property Binding --> 
-        <img [src]="urlImage">
-        <!-- Formato Padrão da Utilização de Property Binding -->
-        <img bind-src="urlImage">
-    </article>
+<section class="interpolation">
+  <article>
+    <h3>Interpolation</h3>
+    <p>String Renderizada com Interpolação: {{ url }}</p>
+    <p>1 + 1 = {{ 1 + 1 }}</p>
+    <p>1 + 0 = {{ getValue() }}</p>
+    <p>Gostou do Curso de Angular? {{ courseAngular && getLikeCourse() }}</p>
+    <!-- Utilizando Interpolação Para Renderizar Imagem no Template -->
+    <img src="{{ urlImage }}">
+  </article>
+</section>
+
+<section class="property-binding">
+  <article>
+    <h3>Property Binding</h3>
+    <!-- Utilizando Property Binding de Forma Explícíta Para Renderizar Imagem no Template -->
+    <!-- Formato Syntax Sugar da Utilização de Property Binding -->
+    <img [src]="urlImage">
+    <!-- Formato Padrão da Utilização de Property Binding -->
+    <img bind-src="urlImage">
+  </article>
 </section>
