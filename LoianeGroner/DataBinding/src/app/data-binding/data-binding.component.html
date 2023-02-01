@@ -68,3 +68,31 @@
       </div>
   </article>
 </section>
+
+<section class="two-way-data-binding">
+  <article>
+      <h3>Two-Way Data Binding</h3>
+      <div>
+        <p>Two-Way Data Binding (Property Binding e Event Binding)</p>
+        <input type="text" [value]="name" (input)="name = inputFieldTwoWay.value" #inputFieldTwoWay/>
+        <p>You Digited: {{ name }}</p>
+      </div>
+      <div>
+        <p>Two-Way Data Binding (ngModel)</p>
+        <!-- Para Utilizar o Two-Way Data Binding Com o ngModel é Preciso Importar
+          o Módulo FormsModule no AppModule -->
+
+        <!-- Não é Preciso Utilizar Uma Váriavel Local Para Pegar o Value do Input,
+          Pois ao Utilizar o ngModel o Angular Faz Isso Automaticamente -->
+        <input  type="text" [ngModel]="name" (ngModelChange)="name = $event"/>
+        <p>You Digited: {{ name }}</p>
+      </div>
+      <div>
+        <p>Two-Way Data Binding (Banana In a Box)</p>
+        <input  type="text" [(ngModel)]="person.name"/>
+        <input  type="text" [(ngModel)]="person.age"/>
+        <p>My name is {{ person.name }} and I have {{ person.age }} years old.</p>
+      </div>
+  </article>
+</section>
+
