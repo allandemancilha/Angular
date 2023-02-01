@@ -1,13 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-data-binding',
-  templateUrl: './data-binding.component.html',
-  styleUrls: ['./data-binding.component.css']
-
+  selector: 'app-my-form',
+  templateUrl: './my-form.component.html',
+  // styleUrls: ['./my-form.component.css']
+  styles: [
+    `
+      .highlight {
+        background-color: chartreuse;
+        font-weight:  bold;
+      }
+    `
+  ]
 })
-
-export class DataBindingComponent implements OnInit {
+export class MyFormComponent implements OnInit {
 
   url: string;
   courseAngular: boolean;
@@ -28,8 +34,8 @@ export class DataBindingComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
   }
+
 
   getValue(){
     return 1;

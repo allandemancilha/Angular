@@ -1,0 +1,98 @@
+<section class="interpolation">
+  <article>
+    <h3>Interpolation</h3>
+    <p>String Renderizada com Interpolação: {{ url }}</p>
+    <p>1 + 1 = {{ 1 + 1 }}</p>
+    <p>1 + 0 = {{ getValue() }}</p>
+    <p>Gostou do Curso de Angular? {{ courseAngular && getLikeCourse() }}</p>
+    <!-- Utilizando Interpolação Para Renderizar Imagem no Template -->
+    <img src="{{ urlImage }}">
+  </article>
+</section>
+
+<section class="property-binding">
+  <article>
+    <h3>Property Binding</h3>
+    <!-- Utilizando Property Binding de Forma Explícíta Para Renderizar Imagem no Template -->
+    <!-- Formato Syntax Sugar da Utilização de Property Binding -->
+    <img [src]="urlImage">
+    <!-- Formato Padrão da Utilização de Property Binding -->
+    <img bind-src="urlImage">
+  </article>
+</section>
+
+<section class="class-and-style-binding">
+  <article>
+      <h3>Class e Style Binding</h3>
+      <div>
+          Selecione Uma Classe:
+
+          <!-- #selectTag: Variável Local Para Obter o Valor da Option Selecionada -->
+          <!-- (change): Declarando o Evento Change Para Capturar a Alteração do Combo Box -->
+          <select #selectTag (change)="null">
+              <option value="alert-success">Sucesso</option>
+              <option value="alert-info">Info</option>
+              <option value="alert-warning">Alerta</option>
+              <option value="alert-danger">Erro</option>
+          </select>
+          <br><br>
+          <!-- Class Binding -->
+          <div class="alert" role="alert" [class.alert-success]="selectTag.value == 'alert-success'">Sucesso</div>
+          <div class="alert" role="alert" [class.alert-info]="selectTag.value == 'alert-info'">Info</div>
+          <div class="alert" role="alert" [class.alert-warning]="selectTag.value == 'alert-warning'">Alerta</div>
+          <div class="alert" role="alert" [class.alert-danger]="selectTag.value == 'alert-danger'">Danger</div>
+
+           <!-- Como o Valor do Combo Box é o Nome da Classe CSS é Possível Utilizar o Class Binding Com Interpolação -->
+          <div class="alert {{ selectTag.value }}" role="alert">Texto Colorido Conforme Valor do Combobox.</div>
+           <!-- Style Binding -->
+          <div class="alert alert-danger" role="alert" [style.display]="selectTag.value == 'alert-danger' ? 'block' : 'none'">Texto Aperece Somente em Caso de Erro.</div>
+      </div>
+  </article>
+</section>
+
+<section class="event-binding">
+  <article>
+      <h3>Event Binding</h3>
+      <div>
+          <button class="btn btn-primary" (click)="clickButton()">Click Me!</button>
+          <!-- #inputField: Abreviando Escrita do Código Utilizando a Variável Local Para Referenciar $event.target -->
+          <input type="text" (keyup)="onKeyUp($event)" (keyup.enter)="saveValue(inputField.value)" (blur)="saveValue(inputField.value)" #inputField/>
+          <p>Actual Value: {{ inputValue }}</p>
+          <p>Saved Value: {{ valueSaved }}</p>
+
+          <span
+          (mouseover)="onMouseOverOut()"
+          (mouseout)="onMouseOverOut()"
+          [class.highlight]="isMouseOver">PASSE O MOUSE AQUI</span>
+
+      </div>
+  </article>
+</section>
+
+<section class="two-way-data-binding">
+  <article>
+      <h3>Two-Way Data Binding</h3>
+      <div>
+        <p>Two-Way Data Binding (Property Binding e Event Binding)</p>
+        <input type="text" [value]="name" (input)="name = inputFieldTwoWay.value" #inputFieldTwoWay/>
+        <p>You Digited: {{ name }}</p>
+      </div>
+      <div>
+        <p>Two-Way Data Binding (ngModel)</p>
+        <!-- Para Utilizar o Two-Way Data Binding Com o ngModel é Preciso Importar
+          o Módulo FormsModule no AppModule -->
+
+        <!-- Não é Preciso Utilizar Uma Váriavel Local Para Pegar o Value do Input,
+          Pois ao Utilizar o ngModel o Angular Faz Isso Automaticamente -->
+        <input  type="text" [ngModel]="name" (ngModelChange)="name = $event"/>
+        <p>You Digited: {{ name }}</p>
+      </div>
+      <div>
+        <p>Two-Way Data Binding (Banana In a Box)</p>
+        <input  type="text" [(ngModel)]="person.name"/>
+        <input  type="text" [(ngModel)]="person.age"/>
+        <p>My name is {{ person.name }} and I have {{ person.age }} years old.</p>
+      </div>
+  </article>
+</section>
+
