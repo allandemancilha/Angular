@@ -49,3 +49,22 @@
       </div>
   </article>
 </section>
+
+<section class="event-binding">
+  <article>
+      <h3>Event Binding</h3>
+      <div>
+          <button class="btn btn-primary" (click)="clickButton()">Click Me!</button>
+          <!-- #inputField: Abreviando Escrita do Código Utilizando a Variável Local Para Referenciar $event.target -->
+          <input type="text" (keyup)="onKeyUp($event)" (keyup.enter)="saveValue(inputField.value)" (blur)="saveValue(inputField.value)" #inputField/>
+          <p>Actual Value: {{ inputValue }}</p>
+          <p>Saved Value: {{ valueSaved }}</p>
+
+          <span
+          (mouseover)="onMouseOverOut()"
+          (mouseout)="onMouseOverOut()"
+          [class.highlight]="isMouseOver">PASSE O MOUSE AQUI</span>
+
+      </div>
+  </article>
+</section>
