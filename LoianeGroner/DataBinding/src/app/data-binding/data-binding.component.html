@@ -2,6 +2,7 @@
   <article>
       <h3>Input/Output Properties</h3>
       <app-course [name]="courseName"></app-course>
+      <count [value]="initialValue" (changeValue)="onChangeValue($event)"></count>
 
   </article>
 </section>
