@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'count',
@@ -22,20 +22,22 @@ export class OutputPropertyComponent implements OnInit {
   // Utilizando o Decorator @Output() Com EventEmitter Para Atualizar Todas as Referências Que Utilizando a Prop changeValue.
   @Output() changeValue = new EventEmitter();
 
+  @ViewChild('inputField') inputValueField!: ElementRef;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  increment()
-  {
-    this.count++;
+  increment(){
+    this.inputValueField.nativeElement.value++;
+    // this.count++;
     this.changeValue.emit({newValue: this.count})
   }
 
-  decrements()
-  {
-    this.count--;
+  decrements(){
+    this.inputValueField.nativeElement.value--;
+    // this.count--;
     this.changeValue.emit({newValue: this.count})
   }
 }
